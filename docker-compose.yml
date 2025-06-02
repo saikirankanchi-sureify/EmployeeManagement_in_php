@@ -1,0 +1,26 @@
+services:
+  php:
+    build: .
+    container_name: php-container
+    volumes:
+      - ./src:/var/www/html/
+    ports:
+      - "5000:80"  # PHP should expose port 80 for HTTP traffic
+    depends_on:
+      - db
+    environment:
+      - HOST=db
+      - DB=mydb
+      - USER=saikirankanchi
+      - PASSWORD=saikirankanchi
+      - SECRET_KEY=sai1234
+
+  db:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      POSTGRES_DB: mydb
+      POSTGRES_USER: saikirankanchi
+      POSTGRES_PASSWORD: saikirankanchi
+    ports:
+      - "5433:5432"  # Expose PostgreSQL on port 5433 on the host
