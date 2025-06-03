@@ -16,7 +16,7 @@ RUN a2enmod headers
 RUN sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Copy files
-COPY ./src/ /var/www/html/
+#COPY ./src/ /var/www/html/
 COPY wait-for-postgres.sh /wait-for-postgres.sh
 
 # Set permissions

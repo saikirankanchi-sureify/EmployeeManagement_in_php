@@ -8,6 +8,10 @@
     include_once('authentication/signup.php');
     include_once('authentication/check_token.php');
     include_once('vendor/autoload.php');
+    use services\Status as Status;
+    use services\JSON as JSON;
+    include_once('services/json.php');
+    include_once('services/status.php');
 
     $method=$_SERVER['REQUEST_METHOD'];
     $path=$_SERVER['REQUEST_URI'];                        //$path=$_SERVER['REQUEST'];
@@ -56,7 +60,7 @@
         }
     }
     else{
-        http_response_code(401);
-        echo json_encode(["msg"=>"unauthorized access"]);
+        Status::unauthorized();
+        JSON::sendMessage('unauthorized access');
     }
 ?>

@@ -13,7 +13,7 @@
             }
             JWT::decode($extracted_token[1],new Key($secretKey,'HS256'));
             return true;
-        }
+        }    
         catch(Exception $err){
             http_response_code(401);
             return false;

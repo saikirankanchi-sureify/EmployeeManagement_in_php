@@ -11,12 +11,20 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
         array (
             'Firebase\\JWT\\' => 13,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/pract',
         ),
     );
 

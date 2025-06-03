@@ -42,7 +42,7 @@ function getEmployee($conn,$id){
     }
 }
 
-function getEmployees($conn, $empid){
+function getEmployees($conn){
     try{
         $sql='select * from Employees order by "EmpId" asc';
         $stmt=$conn->prepare($sql);
