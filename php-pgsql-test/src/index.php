@@ -1,4 +1,4 @@
 <?php
-   include_once './app.php';
+   require './routes/api.php';
 ?>
  
