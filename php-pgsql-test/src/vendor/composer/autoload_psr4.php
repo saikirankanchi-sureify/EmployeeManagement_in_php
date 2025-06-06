@@ -11,5 +11,7 @@ return array(
     'helpers\\' => array($baseDir . '/helpers'),
     'controllers\\' => array($baseDir . '/controllers'),
     'connection\\' => array($baseDir . '/connection'),
+    'Psr\\Http\\Server\\' => array($vendorDir . '/psr/http-server-middleware/src', $vendorDir . '/psr/http-server-handler/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
 );

@@ -19,6 +19,7 @@
     
     if(isset($headers['Authorization']))
         $jwt=$headers['Authorization'];
+    
     if($method=='POST' && $path_arr[0]=='login'){
         $auth=new Authentication($conn);
         $auth->login($data);
@@ -53,7 +54,7 @@
                 break;
             default :
                 Status::notFound();
-                Response:sendMessage('Not Found');
+                Response::sendMessage('Not Found');
         }
     }
     else{

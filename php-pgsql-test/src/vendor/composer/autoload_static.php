@@ -24,6 +24,11 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
             'controllers\\' => 12,
             'connection\\' => 11,
         ),
+        'P' => 
+        array (
+            'Psr\\Http\\Server\\' => 16,
+            'Psr\\Http\\Message\\' => 17,
+        ),
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
@@ -50,6 +55,15 @@ class ComposerStaticInit20fad51902f91e7fd3039e016a6556b5
         'connection\\' => 
         array (
             0 => __DIR__ . '/../..' . '/connection',
+        ),
+        'Psr\\Http\\Server\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-server-middleware/src',
+            1 => __DIR__ . '/..' . '/psr/http-server-handler/src',
+        ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Firebase\\JWT\\' => 
         array (
