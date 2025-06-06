@@ -1,6 +1,9 @@
 {
     "require": {
-        "firebase/php-jwt": "^6.11"
+        "firebase/php-jwt": "^6.11",
+        "psr/http-message": "^2.0",
+        "psr/http-server-handler": "^1.0",
+        "psr/http-server-middleware": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -12,4 +15,3 @@
         }
     }
 }
- 

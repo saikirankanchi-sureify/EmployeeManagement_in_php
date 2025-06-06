@@ -1,5 +1,6 @@
 <?php
     namespace middleware;
+    
     require 'vendor/autoload.php';
     use helpers\Status;
     use helpers\Response;
@@ -30,4 +31,4 @@
             }
         }
     }
-?>
+?> 
