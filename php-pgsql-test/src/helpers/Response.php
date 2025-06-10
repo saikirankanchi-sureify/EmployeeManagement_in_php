@@ -8,5 +8,9 @@
         public static function send($data){
             echo json_encode($data);
         }
+        public static function setHeader($val)
+        {
+            header($val);
+        }
     }
 ?>

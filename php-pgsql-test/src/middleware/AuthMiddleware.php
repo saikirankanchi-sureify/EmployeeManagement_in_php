@@ -7,6 +7,7 @@
     use Firebase\JWT\JWT;
     use Firebase\JWT\Key;
     use Firebase\JWT\ExpiredException;
+    use Firebase\JWT\SignatureInvalidException;
 
     class AuthMiddleware
     {
@@ -19,6 +20,8 @@
         }
         public static function checkToken($raw_token)
         {
+            if(!isset($raw_token))
+                return false;
             try{
                 $token=self::extractToken($raw_token);
                 $secret_key=$_ENV['SECRET_KEY'];
@@ -26,6 +29,10 @@
                 return true;
             }
             catch(ExpiredException $e)
+            {
+                return false;
+            }
+            catch(SignatureInvalidException $e)
             {
                 return false;
             }
