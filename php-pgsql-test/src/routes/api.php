@@ -25,12 +25,12 @@
         $auth->login($data);
         return;
     }
-
+    
     if($method=='POST' && $path_arr[0]=='signup'){
         $auth=new Authentication($conn);
         $auth->signup($data);
         return;
-    }        
+    }              
      if(isset($jwt) && AuthMiddleware::checkToken($jwt)){
         $employee=new Employee($conn);
         switch($method){
