@@ -6,56 +6,52 @@
     use middleware\AuthMiddleware;
     use controllers\Employee;
     use helpers\Response;
+    use helpers\Request;
     use helpers\Status;
+    use helpers\App;
 
-    header('Content-Type:Application/json');
-    $method=$_SERVER['REQUEST_METHOD'];
-    $path=$_SERVER['REQUEST_URI'];
-    $req=file_get_contents('php://input');
-    $data=json_decode($req,true);
+    $params=Request::getParams();
+    $data=Request::getBody();
+    $jwt=Request::getHeader('Authorization');
     $conn=DataBase::getConn();
-    $path_arr=explode('/',trim($path,'/'));
-    $headers=getallheaders();
-    
-    if(isset($headers['Authorization']))
-        $jwt=$headers['Authorization'];
-    
-    if($method=='POST' && $path_arr[0]=='login'){
+    Response::setHeader('Content-Type:Application/json');
+
+    $app=new App();
+
+    $app->post('login',function() use($conn,$data){
         $auth=new Authentication($conn);
         $auth->login($data);
-        return;
-    }
+    });
 
-    if($method=='POST' && $path_arr[0]=='signup'){
+    $app->post('signup',function() use($conn,$data){
         $auth=new Authentication($conn);
         $auth->signup($data);
-        return;
-    }        
-     if(isset($jwt) && AuthMiddleware::checkToken($jwt)){
+    });    
+    
+    if(isset($jwt) && AuthMiddleware::checkToken($jwt)){
+
         $employee=new Employee($conn);
-        switch($method){
-            case 'GET':
-                if($path_arr[0]=='getuser')
-                    $employee->getEmployee((int)$path_arr[1]);
-                else if($path_arr[0]=='')
-                    $employee->getEmployees();
-                break;
-            case 'POST':
-                if($path_arr[0]=='add')
-                    $employee->addEmployee($data);
-                break;
-            case 'PATCH' :
-                if($path_arr[0]=='update')
-                    $employee->updateEmployee((int)$path_arr[1],$data);
-                break;
-            case 'DELETE' :
-                if($path_arr[0]=='delete')
-                    $employee->removeEmployee((int)$path_arr[1]);
-                break;
-            default :
-                Status::notFound();
-                Response::sendMessage('Not Found');
-        }
+
+        $app->get('getuser',function()use($params,$employee){
+            $employee->getEmployee($params);
+        });
+
+        $app->get('',function()use($params,$employee){
+            $employee->getEmployees();
+        });
+
+        $app->post('add',function()use($data,$employee){
+            $employee->addEmployee($data);
+        });
+
+        $app->patch('update',function()use($data,$employee,$params){
+            $employee->updateEmployee($params,$data);
+        });
+
+        $app->delete('delete',function()use($employee,$params){
+            $employee->removeEmployee($params);
+        });
+
     }
     else{
         Status::unauthorized();

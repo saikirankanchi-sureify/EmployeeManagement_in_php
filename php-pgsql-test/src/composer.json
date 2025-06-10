@@ -3,7 +3,9 @@
         "firebase/php-jwt": "^6.11",
         "psr/http-message": "^2.0",
         "psr/http-server-handler": "^1.0",
-        "psr/http-server-middleware": "^1.0"
+        "psr/http-server-middleware": "^1.0",
+        "slim/slim": "^4.0",
+        "slim/psr7": "^1.7"
     },
     "autoload": {
         "psr-4": {
