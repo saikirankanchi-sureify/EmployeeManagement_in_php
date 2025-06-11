@@ -4,8 +4,7 @@
         "psr/http-message": "^2.0",
         "psr/http-server-handler": "^1.0",
         "psr/http-server-middleware": "^1.0",
-        "slim/slim": "^4.0",
-        "slim/psr7": "^1.7"
+        "psr/log": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -13,7 +12,8 @@
             "controllers\\":"controllers/",
             "helpers\\":"helpers/",
             "middleware\\":"middleware/",
-            "routes\\":"routes/"
+            "routes\\":"routes/",
+            "logger\\":"logger/"
         }
     }
 }

@@ -13,9 +13,8 @@
                 $password=$_ENV['PASSWORD'];
                 $conn = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
                 return $conn;
-            } catch (PDOException $e) {
+            } catch (\PDOException $e) {
                 echo "Connection failed: " . $e->getMessage()."<br>";
             }
         }
     }
-?>

@@ -9,53 +9,54 @@
     use helpers\Request;
     use helpers\Status;
     use helpers\App;
+    use logger\Logger;
 
     $params=Request::getParams();
     $data=Request::getBody();
     $jwt=Request::getHeader('Authorization');
-    $conn=DataBase::getConn();
     Response::setHeader('Content-Type:Application/json');
+    $conn=DataBase::getConn();
 
     $app=new App();
 
     $app->post('login',function() use($conn,$data){
-        $auth=new Authentication($conn);
+        $logger=new Logger();
+        $auth=new Authentication($conn,$logger);
         $auth->login($data);
     });
 
     $app->post('signup',function() use($conn,$data){
-        $auth=new Authentication($conn);
+        $logger=new Logger();
+        $auth=new Authentication($conn,$logger);
         $auth->signup($data);
     });    
+
+    AuthMiddleware::checkToken($jwt);
     
-    if(isset($jwt) && AuthMiddleware::checkToken($jwt)){
+    $logger=new Logger();
+    $employee=new Employee($conn,$logger);
 
->>>>>>> new_classes
-        $employee=new Employee($conn);
+    $app->get('getuser',function() use($params,$employee){
+        $employee->getEmployee($params);
+    });
 
-        $app->get('getuser',function()use($params,$employee){
-            $employee->getEmployee($params);
-        });
+    $app->get('',function() use($params,$employee){
+        $employee->getEmployees();
+    });
 
-        $app->get('',function()use($params,$employee){
-            $employee->getEmployees();
-        });
+    $app->post('add',function() use($data,$employee){
+        $employee->addEmployee($data);
+    });
 
-        $app->post('add',function()use($data,$employee){
-            $employee->addEmployee($data);
-        });
+    $app->patch('update',function() use($data,$employee,$params){
+        $employee->updateEmployee($params,$data);
+    });
 
-        $app->patch('update',function()use($data,$employee,$params){
-            $employee->updateEmployee($params,$data);
-        });
+    $app->delete('delete',function() use($employee,$params){
+        $employee->removeEmployee($params);
+    });
 
-        $app->delete('delete',function()use($employee,$params){
-            $employee->removeEmployee($params);
-        });
-
-    }
-    else{
-        Status::unauthorized();
-        Response::sendMessage('unauthorized access');
-    }
-?>
+    $app->default(function(){
+        Status::notFound();
+        Response::sendMessage('route not found');
+    });

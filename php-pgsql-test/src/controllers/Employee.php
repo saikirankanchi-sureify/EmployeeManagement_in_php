@@ -11,9 +11,11 @@
     class Employee
     {
         private $conn;
-        function __construct($conn)
+        private $logger;
+        function __construct($conn,$logger)
         {
             $this->conn=$conn;
+            $this->logger=$logger;
         }
         private function isEmployeeFound($id)
         {
@@ -33,16 +35,32 @@
         }
         public function addEmployee($data)
         {
+            if($this->isEmployeeFound($data['EmpId']))
+                {
+                    Status::conflict();
+                    Response::sendMessage('id already exist');
+                    return;
+                }
             try{
-                $sql='insert into Employees ("EmpId","EmpName","EmpDesig","EmpDept","EmpSal") values(?,?,?,?,?)';
+                $sql='insert into Employees (
+                "EmpId","EmpName","EmpDesig","EmpDept","EmpSal"
+                ) values(?,?,?,?,?)';
                 $stmt=$this->conn->prepare($sql);
-                $stmt->execute([$data['EmpId'],$data['EmpName'],$data['EmpDesig'],$data['EmpDept'], $data['EmpSal']]);
+                $stmt->execute([
+                    $data['EmpId']
+                    ,$data['EmpName']
+                    ,$data['EmpDesig']
+                    ,$data['EmpDept']
+                    , $data['EmpSal']
+                ]);
+                $this->logger->info("Employee {$data['EmpName']} added");
                 Status::newResource();
                 Response::sendMessage('Employee Added');
             }
             catch(\PDOException $err){
-                Status::conflict();
-                Response::sendMessage('id already exist');
+                $this->logger->error("error occured at database");
+                Status::internalServerError();
+                Response::sendMessage('internal server error');
             }
         }
         public function getEmployee($id)
@@ -52,16 +70,18 @@
                 $stmt=$this->conn->prepare($sql);
                 $stmt->execute([$id]);
                 $res=$stmt->fetchAll(\PDO::FETCH_ASSOC);
-                if(!isset($res[0])){
+                if(empty($res)){
+                    $this->logger->alert("Employee with $id fetched failed");
                     Status::notFound();
                     Response::sendMessage('not found');
                     return;
                 }
+                $this->logger->info("Employee {$res['EmpName']} fetched");
                 Status::ok();
                 Response::send($res);
             }
             catch(\PDOException $err){
-                Status::ok();
+                Status::internalServerError();
                 Response::sendMessage('internal server error');
             }
         }
@@ -72,16 +92,18 @@
                 $stmt=$this->conn->prepare($sql);
                 $stmt->execute();
                 $res=$stmt->fetchAll(\PDO::FETCH_ASSOC);
-                if(!isset($res[0])){
+                if(empty($res)){
                     Status::notFound();
                     Response::sendMessage('add some employees');
                     return;
                 }  
+                $this->logger->info("Employees fetched");
                 Status::ok();
                 Response::send($res);
             }
             catch(\PDOException $err){
-                Status::ok();
+                $this->logger->error("error occured at database");
+                Status::internalServerError();
                 Response::sendMessage('internal server error');
             }
         }
@@ -98,11 +120,19 @@
                         set "EmpName"=?,"EmpDesig"=?,"EmpDept"=?,"EmpSal"=?
                         where "EmpId"=?';
                 $stmt=$this->conn->prepare($sql);
-                $res=$stmt->execute([$data['EmpName'],$data['EmpDesig'],$data['EmpDept'],$data['EmpSal'],$id]);
+                $res=$stmt->execute([
+                    $data['EmpName'],
+                    $data['EmpDesig'],
+                    $data['EmpDept'],
+                    $data['EmpSal'],
+                    $id
+                ]);
+                $this->logger->alert("Employee {$data['EmpName']} updated");
                 Status::ok();
                 Response::sendMessage('updated');
             }
             catch(\PDOException $err){
+                $this->logger->error("error occured at database");
                 Status::internalServerError();
                 Response::sendMessage('internal server error');
             }
@@ -111,6 +141,7 @@
         {
             try{
                 if(!$this->isEmployeeFound($id)){
+                    $this->logger->alert("Employee with $id fetch failed");
                     Status::notFound();
                     Response::sendMessage('not found');
                     return;
@@ -118,13 +149,14 @@
                 $sql='delete from Employees where "EmpId"=?';
                 $stmt=$this->conn->prepare($sql);
                 $stmt->execute([$id]);
+                $this->logger->warning("Employee with $id deleted");
                 Status::ok();
                 Response::sendMessage('deleted');
             }
             catch(\PDOException $err){
+                $this->logger->error("error occured at database");
                 Status::internalServerError();
                 Response::sendMessage('internal server error');
             }
         }
     }
-?>

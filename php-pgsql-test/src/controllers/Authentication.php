@@ -6,14 +6,16 @@
     use helpers\Response;
     use \PDO;
     use Firebase\JWT\JWT;
-    // use JWT\
 
     class Authentication{
         private $conn;
-        function __construct($conn)
+        private $logger;
+        function __construct($conn,$logger)
         {
             $this->conn=$conn;
+            $this->logger=$logger;
         }
+
         private function isUserFound($name)
         {
             try{
@@ -30,6 +32,7 @@
                 return null;
             }
         }
+
         private function checkPassword($user,$password)
         {
             $userPassword=$this->isUserFound($user);
@@ -37,40 +40,45 @@
                 return true;
             return false;
         }
+
         public final function signup($data)
         {
             try{
                 $sql='insert into users values(?,?)';
                 $stmt=$this->conn->prepare($sql);
                 $stmt->execute([$data['user'],$data['password']]);
+                $this->logger->info("{$data['user']} user added");
                 Status::newResource();
                 Response::sendMessage('added');
             }
             catch(\PDOException $err){
+                $this->logger->warning('username conflict at signup');
                 Status::conflict();
                 Response::sendMessage('user name already taken');
             }
         }
+
         public final function login($data) 
         {
             $user=$data['user'];
             $password=$data['password'];
 
             if(!$this->checkPassword($user,$password)){  
+                $this->logger->alert("$user entered incorrect credentials");
                 Status::unauthorized();
                 Response::sendMessage('incorrect credentials');
                 return;
             }
             $payload = [
                 "exp" => time() + 3600, 
-                "name" => $user,
-                "password" => $password
+                "name" => $user
             ];
             $secretKey = $_ENV['SECRET_KEY'];
             $jwt = JWT::encode($payload, $secretKey, 'HS256');
+            $this->logger->info('user logged');
             Status::ok();
             Response::send(["token" => $jwt]);
             return;
         }
+        
     }
-?>
