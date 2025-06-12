@@ -3,3 +3,6 @@ INFO :  user logged at 2025-06-11 08:12:36
 WARNING :  username conflict at signup at 2025-06-11 08:12:41
 INFO :  suiir user added at 2025-06-11 08:12:46
 INFO :  Employee akd added at 2025-06-11 08:13:05
+WARNING :  username conflict at signup at 2025-06-12 06:31:52
+INFO :  user logged at 2025-06-12 06:31:56
+INFO :  user logged at 2025-06-12 12:14:31

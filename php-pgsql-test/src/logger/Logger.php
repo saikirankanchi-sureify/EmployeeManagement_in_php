@@ -49,6 +49,7 @@
 
         public function log($level,\Stringable|string $message, array $context = array()):void
         {
+            date_default_timezone_set('Asia/Kolkata');
             $time=date('Y-m-d H:i:s');
             file_put_contents($this->filePath,"$level $message at $time\n",FILE_APPEND);
         }
