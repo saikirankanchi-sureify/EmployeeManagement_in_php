@@ -20,7 +20,7 @@
                 }
                 return true;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return false;
             }
         }
@@ -36,7 +36,7 @@
                 }
                 return true;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return false;
             }
         }
@@ -57,7 +57,7 @@
                 ]);
                 return true;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return false;
             }
         }
@@ -71,7 +71,7 @@
                 $res=$stmt->fetchAll(\PDO::FETCH_ASSOC);
                 return $res;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 throw new \Exception('internal error');
             }
         }
@@ -85,7 +85,7 @@
                 $res=$stmt->fetchAll(\PDO::FETCH_ASSOC);
                 return $res;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 throw new \Exception('internal error');
             }
         }
@@ -105,7 +105,7 @@
                 ]);
                 return true;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return false;
             }
         }
@@ -117,8 +117,7 @@
                 $stmt->execute(['f',$id]);
                 return true;
             }
-            catch(\PDOException $err){
-                echo $err->getMessage();
+            catch(\PDOException){
                 return false;
             }
         }

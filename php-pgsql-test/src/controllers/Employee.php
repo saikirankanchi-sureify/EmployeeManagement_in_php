@@ -49,7 +49,7 @@
                 Status::ok();
                 Response::send($employee);
             }
-            catch(\Exception $err){
+            catch(\Exception){
                 $this->logger->error("database error");
                 Status::internalServerError();
                 Response::sendMessage('internal server error');
@@ -67,7 +67,7 @@
                 Status::ok();
                 Response::send($employees);
             }
-            catch(\Exception $err){
+            catch(\Exception){
                 $this->logger->error("error occured at database");
                 Status::internalServerError();
                 Response::sendMessage('internal server error');

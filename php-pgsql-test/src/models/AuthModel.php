@@ -22,7 +22,7 @@
                 }
                 return $res[0]['password'];
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return null;
             }
         }
@@ -36,10 +36,10 @@
                 $stmt->execute([$data['user'],$hashed_password]);
                 return true;
             }
-            catch(\PDOException $err){
+            catch(\PDOException){
                 return false;
             }
-            catch(\Exception $err){
+            catch(\Exception){
                 return false;
             }
         }
