@@ -1,7 +1,6 @@
 <?php
     require 'vendor/autoload.php';
 
-    use connection\DataBase;
     use controllers\Authentication;
     use middleware\AuthMiddleware;
     use controllers\Employee;
@@ -10,6 +9,7 @@
     use helpers\Status;
     use helpers\App;
     use logger\Logger;
+    use connection\DataBase;
 
     $params=Request::getParams();
     $data=Request::getBody();
@@ -19,22 +19,22 @@
 
     $app=new App();
 
-    $app->post('login',function() use($conn,$data){
+    $app->post('login',function() use($data,$conn){
         $logger=new Logger();
-        $auth=new Authentication($conn,$logger);
+        $auth=new Authentication($logger,$conn);
         $auth->login($data);
     });
 
-    $app->post('signup',function() use($conn,$data){
+    $app->post('signup',function() use($data,$conn){
         $logger=new Logger();
-        $auth=new Authentication($conn,$logger);
+        $auth=new Authentication($logger,$conn);
         $auth->signup($data);
     });    
 
     AuthMiddleware::checkToken($jwt);
     
     $logger=new Logger();
-    $employee=new Employee($conn,$logger);
+    $employee=new Employee($logger,$conn);
 
     $app->get('getuser',function() use($params,$employee){
         $employee->getEmployee($params);

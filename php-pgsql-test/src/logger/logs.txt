@@ -6,3 +6,214 @@ INFO :  Employee akd added at 2025-06-11 08:13:05
 WARNING :  username conflict at signup at 2025-06-12 06:31:52
 INFO :  user logged at 2025-06-12 06:31:56
 INFO :  user logged at 2025-06-12 12:14:31
+INFO :  user logged at 2025-06-12 13:37:31
+ALERT :  suiir entered incorrect credentials at 2025-06-12 16:13:53
+WARNING :  username conflict at signup at 2025-06-12 16:15:50
+INFO :  sut user added at 2025-06-12 16:15:59
+INFO :  user logged at 2025-06-12 16:16:14
+ALERT :  sut entered incorrect credentials at 2025-06-12 16:16:19
+ALERT :  st entered incorrect credentials at 2025-06-12 16:16:25
+ALERT :  st entered incorrect credentials at 2025-06-12 16:17:28
+INFO :  user logged at 2025-06-12 16:17:33
+ALERT :  sut entered incorrect credentials at 2025-06-12 16:17:37
+WARNING :  username conflict at signup at 2025-06-12 16:17:42
+ALERT :  sut entered incorrect credentials at 2025-06-12 17:11:08
+INFO :  user logged at 2025-06-12 17:11:12
+INFO :  Employees fetched at 2025-06-12 17:11:34
+INFO :  Employees fetched at 2025-06-12 17:11:57
+INFO :  Employee akd added at 2025-06-12 17:12:45
+INFO :  Employee ak added at 2025-06-12 17:12:58
+ALERT :  Employee ak updated at 2025-06-12 17:15:00
+ALERT :  Employee ak updated at 2025-06-12 17:15:03
+INFO :  Employees fetched at 2025-06-12 17:15:10
+ALERT :  Employee with 2 fetch failed at 2025-06-12 17:15:50
+WARNING :  Employee with 11 deleted at 2025-06-12 17:15:54
+INFO :  Employees fetched at 2025-06-12 17:15:59
+ALERT :  Employee with 11 fetch failed at 2025-06-12 17:16:11
+INFO :  user logged at 2025-06-12 22:20:39
+ERROR :  error occured at database at 2025-06-12 22:21:02
+ERROR :  error occured at database at 2025-06-12 22:21:59
+ERROR :  error occured at database at 2025-06-12 22:53:15
+ERROR :  error occured at database at 2025-06-12 22:53:45
+INFO :  Employee ak added at 2025-06-12 22:54:06
+INFO :  Employees fetched at 2025-06-12 22:56:58
+INFO :  Employees fetched at 2025-06-12 22:57:21
+INFO :  Employee xyz added at 2025-06-12 23:03:49
+INFO :  Employees fetched at 2025-06-12 23:03:57
+ALERT :  Employee with 11 fetch failed at 2025-06-12 23:04:27
+ERROR :  error occured at database at 2025-06-12 23:04:31
+ERROR :  error occured at database at 2025-06-12 23:05:43
+ERROR :  error occured at database at 2025-06-12 23:07:44
+WARNING :  Employee with 1 deleted at 2025-06-12 23:07:54
+WARNING :  Employee with 1 deleted at 2025-06-12 23:09:03
+WARNING :  Employee with 1 deleted at 2025-06-12 23:09:07
+WARNING :  Employee with 2 deleted at 2025-06-12 23:09:10
+ALERT :  Employee with 2 fetch failed at 2025-06-12 23:11:05
+ERROR :  error occured at database at 2025-06-12 23:11:19
+ERROR :  error occured at database at 2025-06-12 23:17:18
+INFO :  Employee xyz added at 2025-06-12 23:18:24
+INFO :  Employee xyz added at 2025-06-12 23:18:49
+INFO :  Employees fetched at 2025-06-12 23:18:56
+WARNING :  Employee with 3 deleted at 2025-06-12 23:19:19
+ALERT :  Employee with 3 fetch failed at 2025-06-12 23:19:20
+INFO :  Employees fetched at 2025-06-12 23:19:23
+INFO :  user logged at 2025-06-12 23:20:00
+ALERT :  Employee ak updated at 2025-06-12 23:20:31
+ALERT :  Employee ak updated at 2025-06-12 23:21:19
+ALERT :  Employee ak updated at 2025-06-12 23:21:21
+ALERT :  Employee ayik updated at 2025-06-12 23:22:34
+INFO :  saik user added at 2025-06-12 23:25:23
+INFO :  user logged at 2025-06-12 23:25:34
+INFO :  user logged at 2025-06-12 23:25:50
+INFO :  user logged at 2025-06-12 23:27:14
+INFO :  Employees fetched at 2025-06-12 23:27:14
+INFO :  Employees fetched at 2025-06-12 23:27:15
+ERROR :  error occured at database at 2025-06-12 23:27:23
+INFO :  Employees fetched at 2025-06-12 23:27:36
+INFO :  Employees fetched at 2025-06-12 23:27:48
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:48
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:48
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:48
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:50
+INFO :  Employees fetched at 2025-06-12 23:27:50
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:50
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:50
+INFO :  Employees fetched at 2025-06-12 23:27:52
+INFO :  Employees fetched at 2025-06-12 23:27:53
+INFO :  Employees fetched at 2025-06-12 23:27:59
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:59
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:59
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:27:59
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:28:03
+INFO :  Employees fetched at 2025-06-12 23:28:03
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:28:03
+ALERT :  Employee with 8 fetched failed at 2025-06-12 23:28:03
+INFO :  Employees fetched at 2025-06-12 23:28:05
+INFO :  Employees fetched at 2025-06-12 23:28:07
+INFO :  user logged at 2025-06-12 23:36:50
+INFO :  user logged at 2025-06-12 23:37:14
+INFO :  Employees fetched at 2025-06-12 23:37:23
+ERROR :  error occured at database at 2025-06-12 23:37:43
+ERROR :  error occured at database at 2025-06-12 23:38:21
+ERROR :  error occured at database at 2025-06-12 23:38:30
+ERROR :  error occured at database at 2025-06-12 23:38:41
+INFO :  Employee xyz added at 2025-06-12 23:38:47
+ALERT :  Employee ayik updated at 2025-06-12 23:39:41
+ALERT :  Employee ayik updated at 2025-06-12 23:39:53
+INFO :  Employees fetched at 2025-06-12 23:39:57
+WARNING :  Employee with 8 deleted at 2025-06-12 23:40:12
+INFO :  Employees fetched at 2025-06-12 23:40:15
+INFO :  user logged at 2025-06-12 23:40:34
+INFO :  Employees fetched at 2025-06-12 23:40:34
+INFO :  Employees fetched at 2025-06-12 23:40:37
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:40:37
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:40:37
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:40:37
+INFO :  user logged at 2025-06-12 23:41:25
+INFO :  Employees fetched at 2025-06-12 23:41:25
+INFO :  Employees fetched at 2025-06-12 23:41:34
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:41:34
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:41:36
+INFO :  Employees fetched at 2025-06-12 23:41:37
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:41:38
+ALERT :  Employee with 5 fetched failed at 2025-06-12 23:41:40
+INFO :  user logged at 2025-06-13 07:14:57
+INFO :  user logged at 2025-06-13 07:16:58
+INFO :  Employees fetched at 2025-06-13 07:17:08
+ALERT :  Employee ayik updated at 2025-06-13 07:17:35
+INFO :  Employees fetched at 2025-06-13 07:17:39
+ERROR :  error occured at database at 2025-06-13 07:18:12
+ERROR :  error occured at database at 2025-06-13 07:18:38
+ERROR :  error occured at database at 2025-06-13 07:18:56
+INFO :  Employees fetched at 2025-06-13 07:19:05
+ERROR :  error occured at database at 2025-06-13 07:20:29
+INFO :  Employee abc added at 2025-06-13 07:21:29
+INFO :  Employee ac added at 2025-06-13 07:22:34
+INFO :  Employees fetched at 2025-06-13 07:22:38
+ERROR :  error occured at database at 2025-06-13 07:24:15
+ERROR :  error occured at database at 2025-06-13 07:24:47
+INFO :  Employees fetched at 2025-06-13 07:25:00
+WARNING :  username conflict at signup at 2025-06-13 07:25:22
+INFO :  suti user added at 2025-06-13 07:25:27
+WARNING :  username conflict at signup at 2025-06-13 07:25:29
+ALERT :  Employee with 9 fetch failed at 2025-06-13 07:25:53
+ERROR :  error occured at database at 2025-06-13 07:26:00
+ERROR :  error occured at database at 2025-06-13 07:26:23
+ERROR :  error occured at database at 2025-06-13 07:26:43
+WARNING :  Employee with 1 deleted at 2025-06-13 07:27:21
+INFO :  Employees fetched at 2025-06-13 07:28:06
+WARNING :  Employee with 1 deleted at 2025-06-13 07:28:42
+ALERT :  Employee with 1 fetch failed at 2025-06-13 07:30:36
+WARNING :  Employee with 4 deleted at 2025-06-13 07:31:12
+INFO :  Employees fetched at 2025-06-13 07:31:16
+INFO :  Employee aac added at 2025-06-13 07:31:49
+INFO :  Employees fetched at 2025-06-13 07:32:46
+ALERT :  sai entered incorrect credentials at 2025-06-13 07:36:55
+ALERT :  sai entered incorrect credentials at 2025-06-13 07:36:59
+INFO :  user logged at 2025-06-13 07:37:02
+INFO :  Employees fetched at 2025-06-13 07:37:02
+INFO :  Employees fetched at 2025-06-13 07:37:12
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:12
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:12
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:12
+INFO :  Employees fetched at 2025-06-13 07:37:25
+INFO :  Employees fetched at 2025-06-13 07:37:28
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:28
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:28
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:28
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:30
+INFO :  Employees fetched at 2025-06-13 07:37:30
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:30
+ALERT :  Employee with 5 fetched failed at 2025-06-13 07:37:30
+INFO :  Employees fetched at 2025-06-13 07:37:31
+WARNING :  Employee with 5 deleted at 2025-06-13 07:37:33
+INFO :  Employees fetched at 2025-06-13 07:37:33
+INFO :  Employees fetched at 2025-06-13 07:38:36
+INFO :  Employees fetched at 2025-06-13 07:38:42
+INFO :  Employees fetched at 2025-06-13 07:38:47
+INFO :  Employees fetched at 2025-06-13 07:38:49
+INFO :  Employees fetched at 2025-06-13 07:38:52
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:52
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:52
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:52
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:52
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:55
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:55
+INFO :  Employees fetched at 2025-06-13 07:38:55
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:38:55
+INFO :  Employees fetched at 2025-06-13 07:39:04
+INFO :  Employees fetched at 2025-06-13 07:40:12
+INFO :  Employees fetched at 2025-06-13 07:40:29
+INFO :  Employees fetched at 2025-06-13 07:40:42
+INFO :  Employees fetched at 2025-06-13 07:40:44
+INFO :  Employees fetched at 2025-06-13 07:40:46
+INFO :  Employees fetched at 2025-06-13 07:40:48
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:48
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:48
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:48
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:58
+INFO :  Employees fetched at 2025-06-13 07:40:58
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:58
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:40:58
+INFO :  Employees fetched at 2025-06-13 07:41:15
+INFO :  user logged at 2025-06-13 07:43:02
+ALERT :  Employee with 6 fetched failed at 2025-06-13 07:43:18
+INFO :  Employee  fetched at 2025-06-13 07:45:06
+INFO :  Employee ac fetched at 2025-06-13 07:46:40
+INFO :  Employees fetched at 2025-06-13 07:46:50
+INFO :  Employee ac fetched at 2025-06-13 07:46:50
+INFO :  Employee ac fetched at 2025-06-13 07:46:50
+INFO :  Employees fetched at 2025-06-13 07:46:53
+INFO :  Employees fetched at 2025-06-13 07:46:56
+INFO :  Employee ac fetched at 2025-06-13 07:46:56
+INFO :  Employee ac fetched at 2025-06-13 07:46:56
+ALERT :  Employee ac updated at 2025-06-13 07:47:00
+INFO :  Employee ac fetched at 2025-06-13 07:47:04
+INFO :  Employees fetched at 2025-06-13 07:47:04
+INFO :  Employee ac fetched at 2025-06-13 07:47:04
+INFO :  Employees fetched at 2025-06-13 07:47:06
+INFO :  Employee ashd added at 2025-06-13 07:47:16
+INFO :  Employees fetched at 2025-06-13 07:47:18
+INFO :  Employees fetched at 2025-06-13 07:47:21
+WARNING :  Employee with 10 deleted at 2025-06-13 07:47:22
+INFO :  Employees fetched at 2025-06-13 07:47:22

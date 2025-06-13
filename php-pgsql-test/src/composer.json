@@ -13,7 +13,8 @@
             "helpers\\":"helpers/",
             "middleware\\":"middleware/",
             "routes\\":"routes/",
-            "logger\\":"logger/"
+            "logger\\":"logger/",
+            "models\\":"models/"
         }
     }
 }

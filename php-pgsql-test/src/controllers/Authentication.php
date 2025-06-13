@@ -4,58 +4,39 @@
     require 'vendor/autoload.php';
     use helpers\Status;
     use helpers\Response;
+    use models\AuthModel;
     use \PDO;
     use Firebase\JWT\JWT;
 
     class Authentication{
-        private $conn;
-        private $logger;
-        function __construct($conn,$logger)
-        {
-            $this->conn=$conn;
-            $this->logger=$logger;
-        }
 
-        private function isUserFound($name)
+        private $logger;
+        private $model;
+
+        function __construct($logger,$conn)
         {
-            try{
-                $sql='select password from users where name=?';
-                $stmt=$this->conn->prepare($sql);
-                $stmt->execute([$name]);
-                $res=$stmt->fetchAll(PDO::FETCH_ASSOC);
-                if(!isset($res[0])){
-                    return null;
-                }
-                return $res[0]['password'];
-            }
-            catch(\PDOException $err){
-                return null;
-            }
+            $this->logger=$logger;
+            $this->model=new AuthModel($conn);
         }
 
         private function checkPassword($user,$password)
         {
-            $userPassword=$this->isUserFound($user);
-            if(isset($userPassword) && $userPassword==$password)
+            $hashedPassword=$this->model->getUserPassword($user);
+            if(isset($hashedPassword) && password_verify($password,$hashedPassword))
                 return true;
             return false;
         }
 
         public final function signup($data)
         {
-            try{
-                $sql='insert into users values(?,?)';
-                $stmt=$this->conn->prepare($sql);
-                $stmt->execute([$data['user'],$data['password']]);
+            if($this->model->isUserAdded($data)){
                 $this->logger->info("{$data['user']} user added");
                 Status::newResource();
                 Response::sendMessage('added');
             }
-            catch(\PDOException $err){
-                $this->logger->warning('username conflict at signup');
-                Status::conflict();
-                Response::sendMessage('user name already taken');
-            }
+            $this->logger->warning('username conflict at signup');
+            Status::conflict();
+            Response::sendMessage('user name already taken');
         }
 
         public final function login($data) 
