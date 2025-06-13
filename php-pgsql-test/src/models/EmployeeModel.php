@@ -72,7 +72,7 @@
                 return $res;
             }
             catch(\PDOException $err){
-                throw new Exception('internal error');
+                throw new \Exception('internal error');
             }
         }
         public function getEmployeesData()
